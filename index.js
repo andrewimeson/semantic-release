@@ -208,9 +208,11 @@ async function run(context, plugins) {
     await tag(
       nextRelease.gitTag,
       nextRelease.gitHead,
-      options.tagAnnotate,
-      options.tagSign,
-      template(options.tagMessage)({ nextRelease }),
+      {
+        tagAnnotate: options.tagAnnotate,
+        tagSign: options.tagSign,
+        tagMessage: template(options.tagMessage)({ nextRelease }),
+      },
       { cwd, env }
     );
     await addNote({ channels: [nextRelease.channel] }, nextRelease.gitTag, { cwd, env });
