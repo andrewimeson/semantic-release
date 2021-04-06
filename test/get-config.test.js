@@ -139,6 +139,9 @@ test.serial("Read options from .releaserc.yml", async (t) => {
     branches: ["test_branch"],
     repositoryUrl: "https://host.null/owner/module.git",
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: false,
   };
   // Create package.json in repository root
@@ -160,6 +163,9 @@ test.serial("Read options from .releaserc.json", async (t) => {
     branches: ["test_branch"],
     repositoryUrl: "https://host.null/owner/module.git",
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: false,
   };
   // Create package.json in repository root
@@ -181,6 +187,9 @@ test.serial("Read options from .releaserc.js", async (t) => {
     branches: ["test_branch"],
     repositoryUrl: "https://host.null/owner/module.git",
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: false,
   };
   // Create package.json in repository root
@@ -201,6 +210,9 @@ test.serial("Read options from .releaserc.cjs", async (t) => {
     analyzeCommits: { path: "analyzeCommits", param: "analyzeCommits_param" },
     branches: ["test_branch"],
     repositoryUrl: "https://host.null/owner/module.git",
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     tagFormat: `v\${version}`,
     plugins: false,
   };
@@ -223,6 +235,9 @@ test.serial("Read options from release.config.js", async (t) => {
     branches: ["test_branch"],
     repositoryUrl: "https://host.null/owner/module.git",
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: false,
   };
   // Create package.json in repository root
@@ -244,6 +259,9 @@ test.serial("Read options from release.config.cjs", async (t) => {
     branches: ["test_branch"],
     repositoryUrl: "https://host.null/owner/module.git",
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: false,
   };
   // Verify the plugins module is called with the plugin options from release.config.cjs
@@ -272,6 +290,9 @@ test.serial("Prioritise CLI/API parameters over file configuration and git repo"
     branches: ["branch_cli"],
     repositoryUrl: "http://cli-url.com/owner/package",
     tagFormat: `cli\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: false,
   };
   // Verify the plugins module is called with the plugin options from CLI/API
@@ -296,6 +317,9 @@ test.serial('Read configuration from file path in "extends"', async (t) => {
     branches: ["test_branch"],
     repositoryUrl: "https://host.null/owner/module.git",
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: ["plugin-1", ["plugin-2", { plugin2Opt: "value" }]],
   };
   // Create package.json and shareable.json in repository root
@@ -330,6 +354,9 @@ test.serial('Read configuration from module path in "extends"', async (t) => {
     branches: ["test_branch"],
     repositoryUrl: "https://host.null/owner/module.git",
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: false,
   };
   // Create package.json and shareable.json in repository root
@@ -362,6 +389,9 @@ test.serial('Read configuration from an array of paths in "extends"', async (t) 
     analyzeCommits: { path: "analyzeCommits2", param: "analyzeCommits_param2" },
     branches: ["test_branch"],
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: false,
   };
   // Create package.json and shareable.json in repository root
@@ -405,6 +435,9 @@ test.serial('Read configuration from an array of CJS files in "extends"', async 
     analyzeCommits: { path: "analyzeCommits2", param: "analyzeCommits_param2" },
     branches: ["test_branch"],
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: false,
   };
   // Create package.json and shareable.json in repository root
@@ -542,6 +575,9 @@ test.serial('Prioritize configuration from cli/API options over "extends"', asyn
     publish: [{ path: "publishShareable", param: "publishShareable_param2" }],
     branches: ["test_branch2"],
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: false,
   };
   // Create package.json, shareable1.json and shareable2.json in repository root
@@ -577,6 +613,9 @@ test.serial('Allow to unset properties defined in shareable config with "null"',
     generateNotes: "generateNotes",
     analyzeCommits: { path: "analyzeCommits", param: "analyzeCommits_param" },
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: ["test-plugin"],
   };
   // Create package.json and shareable.json in repository root
@@ -627,6 +666,9 @@ test.serial('Allow to unset properties defined in shareable config with "undefin
     generateNotes: "generateNotes",
     analyzeCommits: { path: "analyzeCommits", param: "analyzeCommits_param" },
     tagFormat: `v\${version}`,
+    tagAnnotate: false,
+    tagSign: false,
+    tagMessage: `release \${nextRelease.version}`,
     plugins: false,
   };
   // Create release.config.js and shareable.json in repository root
